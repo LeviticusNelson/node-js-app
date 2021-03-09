@@ -21,8 +21,12 @@ var file = new static.Server(directory);
 /* Construct an http server that gets files from the file server */
 var app = http.createServer(
     function(request, response) {
-        request.addListener('end', function() {
-            file.serverInfo(request, response);
-        }).resume();
+        request.addListener('end', 
+            function() {
+                file.serverInfo(request, response);
+            }
+        ).resume();
     }
 ).listen(port);
+
+console.log('The server is running');
