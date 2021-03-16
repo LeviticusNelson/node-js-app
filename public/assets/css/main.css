@@ -1,0 +1,9 @@
+body {
+    background-color: #1F1B24 !important;
+    color: white !important;
+}
+
+img {
+    max-width: 60%;
+    height: auto;
+}
