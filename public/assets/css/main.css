@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 body {
-    background-color: #1F1B24 !important;
-    color: white !important;
+    background-color: #1F1B24;
+    color: white;
 }
 
 img {
     max-width: 60%;
     height: auto;
+}
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
 }
