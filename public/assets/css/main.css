@@ -14,3 +14,9 @@ img {
     font-family: 'Orbitron', sans-serif;
     font-weight: 600;
 }
+
+a.btn-info:link {
+    background-color: #2de2e6;
+    color: #2E2157;
+    box-shadow: 0 0 10px #2de2e6;
+}
