@@ -17,6 +17,23 @@ img {
 
 a.btn-info:link {
     background-color: #2de2e6;
+    border-color: #2de2e6;
     color: #2E2157;
     box-shadow: 0 0 10px #2de2e6;
+}
+
+a.btn-info:hover {
+    background-color: #34b0b3;
+    border-color: #34b0b3;
+}
+
+a.btn-secondary {
+    background-color: #023788;
+    border-color: #023788;
+    box-shadow: 0 0 10px #023788;
+}
+
+a.btn-secondary:hover {
+    background-color: #012150;
+    border-color: #012150;
 }
