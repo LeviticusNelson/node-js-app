@@ -119,7 +119,7 @@ io.sockets.on('connect', function (socket) {
 
         /* Actually have the user join the room */
         socket.join(room);
-
+        
         /* Get the room object */
         var roomObject = io.sockets.adapter.rooms;
         
@@ -134,13 +134,13 @@ io.sockets.on('connect', function (socket) {
         };
         io.in(room).emit('join_room_response',success_data);
 
-        for(var socket_in_room in roomObject.sockets) {
+        for(var socket_in_room in players) {
             var success_data = {
-            result: 'success',
-            room: room,
-            username: players[socket_in_room].username,
-            socket_id: socket_in_room,
-            membership: numClients
+                result: 'success',
+                room: room,
+                username: players[socket_in_room].username,
+                socket_id: socket_in_room,
+                membership: numClients
             };
             socket.emit('join_room_response',success_data);
         };
