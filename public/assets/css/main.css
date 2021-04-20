@@ -49,3 +49,15 @@ a.btn-secondary, button.btn-secondary:hover {
     background-color: #012150;
     border-color: #012150;
 }
+
+table#game_board td{
+    margin:auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #620cd3;
+}
+
+td.hovered_over:hover {
+    background:url('../images/hover.gif');
+    background-size: 100% 100%;
+}
