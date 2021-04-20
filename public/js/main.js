@@ -251,7 +251,7 @@ $(function() {
     console.log('*** Client Log Message: \'join_room\' payload: ' + JSON.stringify(payload));
     socket.emit('join_room', payload);
 
-    $('#quit').append('<a href="lobby.html?username="'+username+'" class="btn btn-secondary active" role="button" aria-pressed="true">Quit</a>')
+    $('#quit').append('<a href="lobby.html?username='+username+'" class="btn btn-secondary active" role="button" aria-pressed="true">Quit</a>')
 });
 
 var old_board = [
