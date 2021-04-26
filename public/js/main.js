@@ -50,7 +50,7 @@ socket.on('join_room_response', function(payload) {
         var nodeA = $('<div></div>');
         nodeA.addClass('socket_' + payload.socket_id);
 
-        var nodeB = $('<div></div>');
+        var nodeB = $('<h3>' + payload.username +'</h3>');
         nodeB.addClass('socket_' + payload.socket_id);
 
         var nodeC = $('<div></div>');
@@ -58,8 +58,8 @@ socket.on('join_room_response', function(payload) {
 
         nodeA.addClass('');
 
-        nodeB.addClass('col-1');
-        nodeB.append('<h3>' + payload.username +'</h3>');
+        //nodeB.addClass('col-1');
+       // nodeB.append('<h3>' + payload.username +'</h3>');
 
         nodeC.addClass('col-1');
         var buttonC = makeInviteButton(payload.socket_id);
@@ -69,7 +69,11 @@ socket.on('join_room_response', function(payload) {
         nodeC.hide();
         nodeB.hide();
 
-        $('#players').append(nodeA,nodeC,nodeB);
+        nodeB.css('padding-left', '10px');
+        nodeC.append(nodeB);
+        nodeC.css('display','flex');
+
+        $('#players').append(nodeA,nodeC);
         nodeA.slideDown(1000);
         nodeC.slideDown(1000);
         nodeB.slideDown(1000);
@@ -342,23 +346,25 @@ socket.on('game_update', function(payload){
                 else {
                     $('#'+row+'_'+column).html('<img src="assets/images/error.gif" alt="error" />');
                 }
-                /* Set up interactivity */
-                $('#'+row+'_'+column).off('click');
-                if(board[row][column] == ' '){
-                    $('#'+row+'_'+column).addClass('hovered_over');
-                    $('#'+row+'_'+column).click(function(r,c) {
-                        return function(){
-                            var payload = {};
-                            payload.row = r;
-                            payload.column = c;
-                            payload.color = my_color;
-                            console.log('*** Client Log Message: \'play_token\' payload: ' + JSON.stringify(payload));
-                            socket.emit('play_token', payload);
-                        };
-                    }(row, column));
-                }
-                else {
-                    $('#'+row+'_'+column).removeClass('hovered_over');
+            }
+            /* Set up interactivity */
+            $('#'+row+'_'+column).off('click');
+            $('#'+row+'_'+column).removeClass('hovered_over');
+            if(payload.game.whose_turn === my_color){
+                if(payload.game.legal_moves[row][column] === my_color.substr(0,1)){
+                    if(board[row][column] == ' '){
+                        $('#'+row+'_'+column).addClass('hovered_over');
+                        $('#'+row+'_'+column).click(function(r,c) {
+                            return function(){
+                                var payload = {};
+                                payload.row = r;
+                                payload.column = c;
+                                payload.color = my_color;
+                                console.log('*** Client Log Message: \'play_token\' payload: ' + JSON.stringify(payload));
+                                socket.emit('play_token', payload);
+                            };
+                        }(row, column));
+                    }
                 }
             }
         }
