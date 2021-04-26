@@ -61,3 +61,8 @@ td.hovered_over:hover {
     background:url('../images/hover.gif');
     background-size: 100% 100%;
 }
+
+td {
+    width: 64px;
+    height: 64px;
+}

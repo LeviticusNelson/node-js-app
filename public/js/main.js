@@ -295,6 +295,7 @@ socket.on('game_update', function(payload){
         return;
     }
     $('#my_color').html('<h2 id="my_color">I am '+ my_color+'</h2>');
+    $('#my_color').append('<h3>It is '+ payload.game.whose_turn + '\'s turn</h3>');
     /* Animate changes to the board */
 
     var blacksum = 0;
