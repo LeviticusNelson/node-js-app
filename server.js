@@ -895,10 +895,10 @@ function send_game_update(socket, game_id, message) {
             if(games[game_id].legal_moves[row][column] != ' '){
                 count++;
             }
-            if(games[game_id].board[row][column] != 'b'){
+            if(games[game_id].board[row][column] === 'b'){
                 black++;
             }
-            if(games[game_id].board[row][column] != 'w'){
+            if(games[game_id].board[row][column] === 'w'){
                 white++;
             }
         }
