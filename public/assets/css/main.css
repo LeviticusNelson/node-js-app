@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 body {
     background-color: #1F1B24;
     color: white;
 }
 
-img {
-    max-width: 60%;
+#top-splash {
+    max-width: 40%;
     height: auto;
     object-fit: cover;
 }
@@ -17,14 +17,21 @@ img {
     max-width: 65%;
 }
 
-h2{
-    font-family: 'Audiowide', cursive;
+h1, h3, p{
+    font-family: 'VT323', monospace;
+    font-weight: 600;
+    color: #00FF41;
+}
+
+input, #blacksum, #whitesum {
+    font-family: 'VT323', monospace;
     font-weight: 600;
 }
 
-.btn, input, h3, p{
+h2,.btn{
     font-family: 'Orbitron', sans-serif;
     font-weight: 600;
+    box-shadow: 0 0 10px inherit;
 }
 
 a.btn-info:link {
@@ -39,15 +46,21 @@ a.btn-info:hover {
     border-color: #34b0b3;
 }
 
-a.btn-secondary,button.btn-secondary {
+a.btn-secondary,button.btn-secondary,a.btn.btn-secondary{
     background-color: #023788;
     border-color: #023788;
     box-shadow: 0 0 10px #023788;
 }
 
-a.btn-secondary, button.btn-secondary:hover {
+a.btn-secondary, button.btn-secondary,a.btn.btn-secondary:hover {
     background-color: #012150;
     border-color: #012150;
+}
+
+#messages {
+    min-height: 7em;
+    max-height: 7em;
+    overflow-y: auto;
 }
 
 table#game_board td{

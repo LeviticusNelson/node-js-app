@@ -200,6 +200,7 @@ function send_message(){
     payload.message = $('#send_message_holder').val();
     console.log('*** Client Log Message: \'send_message\' payload: ' + JSON.stringify(payload));
     socket.emit('send_message', payload);
+    $('#send_message_holder').val("");
 }
 
 socket.on('send_message_response', function(payload) {
@@ -211,7 +212,8 @@ socket.on('send_message_response', function(payload) {
     var newNode = $(newHTML);
     newNode.hide();
     $('#messages').append(newNode);
-    newNode.slideDown(1000);
+    newNode.show();
+    $('#messages').scrollTop(10000000000);
 });
 
 function makeInviteButton(socket_id){
@@ -255,7 +257,7 @@ $(function() {
     console.log('*** Client Log Message: \'join_room\' payload: ' + JSON.stringify(payload));
     socket.emit('join_room', payload);
 
-    $('#quit').append('<a href="lobby.html?username='+username+'" class="btn btn-secondary active" role="button" aria-pressed="true">Quit</a>')
+    $('#quit').append('<a href="lobby.html?username='+username+'" class="btn btn-danger" role="button" aria-pressed="true">Quit</a>')
 });
 
 var old_board = [

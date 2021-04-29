@@ -11,33 +11,40 @@
    </head>
    <body>
       <div class="container-fluid text-center">
+         <a href='index.html'>
+           <img class='img-fuild' src="assets/images/top-splash.png" alt="Reversi logo" id='top-splash'/>
+         </a>
+      </div>
          <div class="row">
-            <div class="col">
-               <img class='img-fuild' src="assets/images/top-splash.png" alt="Reversi logo" id='top-splash'/>
-               <div class="row align-items-end" id='players'>
+               
+               <div class="col" id='players'>
                   <div class="col-1 text-right">
                      <h2>Players</h2>
                   </div>
-                  <div class="col-3">
+               </div>
+               <div class="col float-right align-items-end" style='max-height: 100vh;'>
+                     <h2>Messages</h2>
+                     <div id='messages'></div>
+                  <div class='form-inline align-items-center'>
+                     <form onsubmit="send_message(); return false;" class="form-inline">
+                        <div class='col-auto'>
+                           <div class="form-group">
+                              <label for='send_message_holder' class='col-form-label sr-only d-none'>Enter Your Chat Message</label>
+                              <input class='form-control' type='text' value='' id='send_message_holder' placeholder="Enter Chat Message"/>
+                           </div>
+                        </div>
+                        <div class="col-auto">
+                           <button class="btn btn-default btn-secondary">Send</button>
+                        </div>
+                     </form>
                   </div>
                </div>
-               <h2>Messages</h2>
-               <div id='messages'>
-               </div>
-            </div>
          </div>
-         <div class="row">
+         <div class="row float-end">
             <div class="col">
-               <form onsubmit="send_message(); return false;" class="form-inline">
-                  <div class="form-group">
-                     <label for='send_message_holder' class='col-form-label sr-only d-none'>Enter Your Chat Message</label>
-                     <input class='form-control mx-auto w-50' type='text' value='' id='send_message_holder' placeholder="Enter Chat Message"/>
-                  </div>
-                  <button class="btn btn-default btn-secondary">Send</button>
-               </form>
+               
             </div>
          </div>
-      </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js" integrity="sha512-2RDFHqfLZW8IhPRvQYmK9bTLfj/hddxGXQAred2wNZGkrKQkLGj8RCkXfRJPHlDerdHHIzTFaahq4s/P4V6Qig==" crossorigin="anonymous"></script>
