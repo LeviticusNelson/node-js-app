@@ -918,6 +918,7 @@ function send_game_update(socket, game_id, message) {
             game_id: game_id
         }
         io.in(game_id).emit('game_over', success_data);
+
         
         /* Delete old games after 1 hour */
         setTimeout(function(id) {
@@ -925,4 +926,5 @@ function send_game_update(socket, game_id, message) {
                 delete games[id];
             }}(game_id), 60*60*1000);
     }
+
 }

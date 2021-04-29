@@ -46,13 +46,13 @@ a.btn-info:hover {
     border-color: #34b0b3;
 }
 
-a.btn-secondary,button.btn-secondary,a.btn.btn-secondary{
+a.btn-secondary,button.btn-secondary,a.btn.btn-secondary, button.btn.btn-secondary{
     background-color: #023788;
     border-color: #023788;
     box-shadow: 0 0 10px #023788;
 }
 
-a.btn-secondary, button.btn-secondary,a.btn.btn-secondary:hover {
+a.btn-secondary, button.btn-secondary,a.btn.btn-secondary,button.btn.btn-secondary:hover {
     background-color: #012150;
     border-color: #012150;
 }
